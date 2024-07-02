@@ -18,8 +18,6 @@ def write_gimp_palette(triplets):
 
 def write_paintdotnet_palette(triplets):
     with codecs.open(sys.argv[2], mode='w', encoding="utf-8") as file:
-        file.write("GIMP Palette\n")
-        file.write(f"Name: {sys.argv[1]}\n")
         for line in triplets:
             file.write(f"FF{line[0] << 2}{line[1] << 2}{line[2] << 2}\n")
 
